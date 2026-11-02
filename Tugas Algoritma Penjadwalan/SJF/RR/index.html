@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CPU Scheduling Simulator - Kelompok 2</title>
+
+    <!-- Menghubungkan CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>CPU Scheduling Simulator</h1>
+    <p>Simulasi Algoritma Penjadwalan Proses Sistem Operasi</p>
+    <p>Kelompok 2 | Teknik Informatika</p>
+</header>
+
+<div class="container">
+
+    <!-- IDENTITAS KELOMPOK -->
+    <section class="members">
+        <h2>Anggota Kelompok 2</h2>
+
+        <div class="member-grid">
+            <div class="member">
+                <strong>Rafi Khalid</strong>
+                <small>NIM: 2501020138</small>
+            </div>
+
+            <div class="member">
+                <strong>Muhammad Fadel F</strong>
+                <small>NIM: 2501020149</small>
+            </div>
+
+            <div class="member">
+                <strong>Bintang</strong>
+                <small>NIM: 2501020154</small>
+            </div>
+
+            <div class="member">
+                <strong>Muhammad Yusri</strong>
+                <small>NIM: 2501020142</small>
+            </div>
+
+            <div class="member">
+                <strong>Gilbert Isran</strong>
+                <small>NIM: 2501020135</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- PILIH ALGORITMA -->
+    <div class="tabs">
+        <button id="sjfTab" class="active" onclick="changeTab('sjf')">
+            SJF
+        </button>
+
+        <button id="rrTab" onclick="changeTab('rr')">
+            ROUND ROBIN
+        </button>
+    </div>
+
+    <!-- INPUT PROSES -->
+    <section class="panel">
+
+        <h2 id="algorithmTitle">Shortest Job First (SJF)</h2>
+
+        <p id="description">
+            Algoritma SJF memilih proses dengan Burst Time paling kecil
+            dari proses yang sudah tersedia.
+        </p>
+
+        <div class="input-grid input-spacing">
+
+            <div>
+                <label>Process ID</label>
+                <input type="text" id="pid" placeholder="Contoh: P1">
+            </div>
+
+            <div>
+                <label>Arrival Time (AT)</label>
+                <input type="number" id="at" min="0" placeholder="0">
+            </div>
+
+            <div>
+                <label>Burst Time (BT)</label>
+                <input type="number" id="bt" min="1" placeholder="5">
+            </div>
+
+        </div>
+
+        <!-- TIME QUANTUM -->
+        <div id="quantumBox" class="input-grid hidden">
+
+            <div>
+                <label>Time Quantum</label>
+                <input type="number" id="quantum" min="1" value="2">
+            </div>
+
+        </div>
+
+        <!-- BUTTON -->
+        <div class="actions">
+
+            <button class="btn primary" onclick="addProcess()">
+                + Tambah Proses
+            </button>
+
+            <button class="btn secondary" onclick="loadExample()">
+                Data Contoh
+            </button>
+
+            <button class="btn danger" onclick="clearAll()">
+                Reset
+            </button>
+
+        </div>
+
+        <!-- TABEL INPUT -->
+        <h2>Data Proses</h2>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Process</th>
+                        <th>Arrival Time</th>
+                        <th>Burst Time</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+
+                <tbody id="processTable"></tbody>
+            </table>
+        </div>
+
+        <div class="actions calculate-button">
+            <button class="btn primary" onclick="calculate()">
+                HITUNG PENJADWALAN
+            </button>
+        </div>
+
+    </section>
+
+    <!-- HASIL PERHITUNGAN -->
+    <section id="result" class="panel hidden">
+
+        <h2>Hasil Perhitungan</h2>
+
+        <div class="metric-grid">
+
+            <div class="metric">
+                <span>Average Waiting Time</span>
+                <h3 id="avgWT">0</h3>
+            </div>
+
+            <div class="metric">
+                <span>Average Turnaround Time</span>
+                <h3 id="avgTAT">0</h3>
+            </div>
+
+            <div class="metric">
+                <span>Total Proses</span>
+                <h3 id="totalProcess">0</h3>
+            </div>
+
+        </div>
+
+        <!-- GANTT CHART -->
+        <h2>Gantt Chart</h2>
+
+        <div id="ganttChart" class="gantt"></div>
+
+        <!-- TABEL HASIL -->
+        <h2>Tabel Hasil Penjadwalan</h2>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Proses</th>
+                        <th>AT</th>
+                        <th>BT</th>
+                        <th>CT</th>
+                        <th>TAT</th>
+                        <th>WT</th>
+                    </tr>
+                </thead>
+
+                <tbody id="resultTable"></tbody>
+            </table>
+        </div>
+
+        <div class="note" id="explanation"></div>
+
+    </section>
+
+</div>
+
+<footer>
+    CPU Scheduling Simulator | Kelompok 2
+</footer>
+
+<!-- Menghubungkan JavaScript -->
+<script src="script.js"></script>
+
+</body>
+</html>

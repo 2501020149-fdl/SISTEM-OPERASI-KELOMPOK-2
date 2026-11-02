@@ -1,0 +1,301 @@
+/* RESET DAN DASAR */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(120deg, #102c54, #1769aa);
+    color: white;
+    padding: 28px 7%;
+}
+
+header h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #dbeafe;
+    margin-top: 5px;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* PANEL */
+.members,
+.panel {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px #0000000d;
+    margin-bottom: 22px;
+}
+
+h2 {
+    margin-bottom: 17px;
+    color: #12345a;
+}
+
+.panel > p {
+    line-height: 1.6;
+}
+
+/* ANGGOTA KELOMPOK */
+.member-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+}
+
+.member {
+    background: #eff6ff;
+    padding: 14px;
+    border-radius: 8px;
+    border-left: 4px solid #2475c5;
+}
+
+.member strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.member small {
+    color: #64748b;
+}
+
+/* TAB ALGORITMA */
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tabs button {
+    flex: 1;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #dbeafe;
+    color: #174b7c;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.tabs button:hover {
+    background: #bfdbfe;
+}
+
+.tabs button.active {
+    background: #1769aa;
+    color: white;
+}
+
+/* INPUT */
+.input-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.input-spacing {
+    margin-top: 20px;
+    margin-bottom: 16px;
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+input {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #1769aa;
+}
+
+/* BUTTON */
+.actions {
+    display: flex;
+    gap: 9px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 11px 18px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+}
+
+.primary {
+    background: #1769aa;
+    color: white;
+}
+
+.secondary {
+    background: #e2e8f0;
+    color: #334155;
+}
+
+.danger {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.calculate-button {
+    margin-top: 20px;
+}
+
+/* TABEL */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+    min-width: 550px;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 14px;
+}
+
+th {
+    background: #eff6ff;
+    color: #174b7c;
+}
+
+/* HASIL PERHITUNGAN */
+.metric-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 14px;
+    margin: 20px 0;
+}
+
+.metric {
+    padding: 18px;
+    background: #eff6ff;
+    border-radius: 10px;
+    border-left: 4px solid #1769aa;
+}
+
+.metric span {
+    font-size: 13px;
+    color: #64748b;
+}
+
+.metric h3 {
+    margin-top: 8px;
+    font-size: 25px;
+    color: #12345a;
+}
+
+/* GANTT CHART */
+.gantt {
+    display: flex;
+    overflow-x: auto;
+    padding: 15px 0;
+    gap: 3px;
+}
+
+.block {
+    min-width: 65px;
+    text-align: center;
+    background: #1769aa;
+    color: white;
+    padding: 15px 8px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.block.idle {
+    background: #94a3b8;
+}
+
+.block small {
+    display: block;
+    font-size: 11px;
+    margin-top: 7px;
+}
+
+/* KETERANGAN */
+.note {
+    background: #f0fdf4;
+    padding: 14px;
+    border-radius: 8px;
+    color: #166534;
+    margin-top: 20px;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* VISIBILITY */
+.hidden {
+    display: none;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #64748b;
+}
+
+/* RESPONSIVE */
+@media (max-width: 650px) {
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    .input-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tabs {
+        flex-direction: column;
+    }
+
+    .members,
+    .panel {
+        padding: 16px;
+    }
+}
